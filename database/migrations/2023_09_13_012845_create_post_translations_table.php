@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('locale')->index();
             $table->string('title')->nullable();
             $table->text('content')->nullable();
+            $table->text('smallDesc')->nullable();
             $table->unique(['post_id', 'locale']);
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
         });
